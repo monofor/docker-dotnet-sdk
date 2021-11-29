@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/sdk:6.0
 
 RUN curl -o install.sh https://raw.githubusercontent.com/microsoft/artifacts-credprovider/master/helpers/installcredprovider.sh
 RUN chmod +x ./install.sh
