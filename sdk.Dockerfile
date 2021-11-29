@@ -13,11 +13,8 @@ RUN wget "$NODE_DOWNLOAD_URL" -O nodejs.tar.gz \
     && rm nodejs.tar.gz \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-    && apt update \
-    && apt install -y yarn
-
 RUN apt update \
     && apt install -y nodejs \
     && apt install -y npm
+
+RUN npm -g install yarn
