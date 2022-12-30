@@ -1,5 +1,10 @@
 FROM mcr.microsoft.com/powershell:latest
 
+# Install curl
+RUN cd tmp \
+    && apt update\
+    && apt install -y --no-install-recommends curl
+
 # Install Ping, Telnet, and NTLM
 RUN cd tmp \
     && curl -LOJ https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb \
