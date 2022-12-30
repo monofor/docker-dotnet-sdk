@@ -13,6 +13,7 @@ RUN wget "$NODE_DOWNLOAD_URL" -O nodejs.tar.gz \
     && rm nodejs.tar.gz \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
+# Install Node JS and NPM
 RUN apt update \
     && apt install -y nodejs \
     && apt install -y npm
